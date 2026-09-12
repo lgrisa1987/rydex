@@ -3,20 +3,72 @@
 
 /* ─── Tailwind v4 design tokens ──────────────────────────── */
 @theme {
-  --font-sora: "Sora", sans-serif;
+  --font-head: "Sora", sans-serif;
+  --font-body: "HankenGrotesk", sans-serif;
   --color-accent: #e9021e;
   --color-accent-2: #ff2d44;
   --color-bg: #050506;
   --color-bg-2: #0a0a0b;
   --color-panel: #0f0f11;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-ink: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.62);
+  --max-w: 77.5rem;
 }
 
 /* ─── Base ───────────────────────────────────────────────── */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   html,
   body {
     width: 100%;
     height: 100%;
-    font-family: var(--font-sora);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: var(--color-muted);
+    background: var(--color-bg);
   }
+  button {
+    cursor: pointer;
+  }
+  input,
+  select {
+    outline: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--color-ink);
+    line-height: 1.15;
+  }
+  section {
+    padding: clamp(4rem, 8vw, 6.875rem) 0;
+    position: relative;
+  }
+  svg {
+    display: inline-block;
+  }
+}
+
+@layer utilities {
+  /* ─── Containers ────────────────────────────────────────── */
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: calc(var(--max-w)+2 * clamp(1rem, 4vw, 2.5rem));
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+  }
+}
+.navbar.is-stuck {
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(1.25rem) saturate(140%);
+  padding: 0.75rem 0;
+  box-shadow: 0 0.75rem 2.125rem rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--color-line);
 }

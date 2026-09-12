@@ -1,0 +1,102 @@
+---
+/* import { cn } from "cn"; */
+const menu = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Rent a Car", href: "#fleet" },
+  { label: "Buy a Car", href: "#sale" },
+  { label: "Services", href: "#services" },
+  { label: "Reviews", href: "#testimonials" },
+];
+---
+
+<header class='header'>
+  <nav
+    class='navbar fixed top-0 left-0 right-0 z-[120] py-4.5 [background:linear-gradient(180deg,rgba(8,8,10,0)_0%,rgba(8,8,10,0.12)_100%)] [backdrop-filter:blur(0.875rem)_saturate(130%)] [transition:background_0.35s_ease,_padding_0.35s_ease,_box-shadow_0.35s_ease,_border_0.35s_ease] border-b border-transparent'
+  >
+    <div class='container navbar_row flex items-center gap-7'>
+      <a href='#hero' class='brand flex items-center gap-2.5 shrink-0'>
+        <span
+          class='brand_name font-head font-light text-2xl tracking-[0.375rem] text-ink after:content-["."] after:text-accent after:font-bold'
+          >RYDEX</span
+        >
+      </a>
+      <input type='checkbox' hidden='hidden' id='menu-btn' />
+      <nav class='nav ml-auto'>
+        <label for='menu-btn' class='nav-close' aria-label='Close menu'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='size-6'
+          >
+            <path stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'></path>
+          </svg>
+        </label>
+        <ul class='menu flex gap-[0.375rem]'>
+          {
+            menu.map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class='block py-2 px-[0.875rem] rounded-lg font-semibold text-[0.95rem] text-muted transition-[color:0.3s_ease,_bacground_0.3s_ease] hover:text-ink hover:bg-[rgba(255,255,255,0.07)]'
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div class='navbar_right flex items-center gap-4.5 shrink-0'>
+        <a href='tel:+1234567890' class='navbar_phone'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='size-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z'
+            ></path>
+          </svg>
+
+          <span>+1 234 567 890</span>
+        </a>
+        <a href='fleet' class='btn btn--accent'>
+          Book Now
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='size-6'
+          >
+            <path stroke-linecap='round' stroke-linejoin='round' d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'></path>
+          </svg>
+        </a>
+        <label for='menu-btn' class='menu-icon' aria-label='Menu'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke-width='1.5'
+            stroke='currentColor'
+            class='size-6'
+          >
+            <path stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <label for='menu-btn' class='nav-overlay'></label>
+    </div>
+  </nav>
+</header>
