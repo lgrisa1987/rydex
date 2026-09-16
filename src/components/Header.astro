@@ -1,4 +1,5 @@
 ---
+import Button from "@/components/ui/Button.astro";
 /* import { cn } from "cn"; */
 const menu = [
   { label: "Home", href: "#home" },
@@ -69,19 +70,8 @@ const menu = [
 
           <span>+1 234 567 890</span>
         </a>
-        <a href='fleet' class='btn btn--accent'>
-          Book Now
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            class='size-6'
-          >
-            <path stroke-linecap='round' stroke-linejoin='round' d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3'></path>
-          </svg>
-        </a>
+        <Button label='Book Now' href='#fleet' arrow />
+
         <label for='menu-btn' class='menu-icon' aria-label='Menu'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

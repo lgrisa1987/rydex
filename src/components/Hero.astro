@@ -1,3 +1,8 @@
+---
+import Button from "@/components/ui/Button.astro";
+import CarSideIcon from "@/components/icons/CarSideIcon.astro";
+---
+
 <section id='hero' class='hero'>
   <span class='hreo_glow' aria-hidden='true'></span>
   <div class='container hero_inner'>
@@ -18,6 +23,40 @@
         </svg>
         Rent &bull; Drive &bull; Own
       </span>
+      <h1 class='hero_title'>Drive The <br /><span class='hero_accent'>Extraordinary</span></h1>
+      <p class='hero_text'>
+        Premium cars for rent and hand-picked vehicles for sale. Transparent pricing, full insurance, and 24/7 support –
+        from a quick weekend ride to the keys you keep forever.
+      </p>
+      <div class='hero_actions'>
+        <Button label='Explore the Fleet' href='#fleet' arrow />
+        <Button label='Cars for Sale' href='#sale' variant='ghost' />
+      </div>
+    </div>
+    <!-- Hero marquee -->
+    <div class='hero_marquee' aria-hidden='true'>
+      <div class='hero_marquee_track'>
+        <span>Premium Rentals</span>
+        <CarSideIcon />
+        <span>Certified Sales</span>
+        <CarSideIcon />
+        <span>24/7 Support</span>
+        <CarSideIcon />
+        <span>Full Insurance</span>
+        <CarSideIcon />
+        <span>Free Delivery</span>
+        <CarSideIcon />
+        <span>Premium Rentals</span>
+        <CarSideIcon />
+        <span>Certified Sales</span>
+        <CarSideIcon />
+        <span>24/7 Support</span>
+        <CarSideIcon />
+        <span>Full Insurance</span>
+        <CarSideIcon />
+        <span>Free Delivery</span>
+        <CarSideIcon />
+      </div>
     </div>
   </div>
 </section>
